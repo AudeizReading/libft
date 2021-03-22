@@ -5,6 +5,8 @@ CFLAGS=-Wall -Wextra -Werror
 CHEADERS=-I . 
 SRC=$(addprefix ft_, $(addsuffix .c,\
 		isalpha\
+		toupper\
+		tolower\
 	))
 OBJ=$(SRC:.c=.o)
 NAME=libft.a
@@ -37,8 +39,6 @@ re: fclean all
 #	isalnum\
 #	isascii\
 #	isprint\
-#	toupper\
-#	tolower\
 #	strchr\
 #	strrchr\
 #	strncmp\
