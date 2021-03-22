@@ -7,6 +7,10 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		isalpha\
 		toupper\
 		tolower\
+		putchar_fd\
+		putstr_fd\
+		putendl_fd\
+		putnbr_fd\
 	))
 OBJ=$(SRC:.c=.o)
 NAME=libft.a
@@ -54,8 +58,4 @@ re: fclean all
 #	split\
 #	itoa\
 #	strmapi\
-#	putchar_fd\
-#	putstr_fd\
-#	putendl_fd\
-#	putnbr_fd\
 
