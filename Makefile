@@ -1,9 +1,10 @@
-CC=-/bin/gcc
-AR=-/bin/ar crs
-RM=-/bin/rm -rf
+CC=-gcc
+AR=-ar crs
+RM=-rm -rf
 CFLAGS=-Wall -Wextra -Werror
 CHEADERS=-I . 
 SRC=$(addprefix ft_, $(addsuffix .c,\
+		isalpha\
 	))
 OBJ=$(SRC:.c=.o)
 NAME=libft.a
@@ -32,7 +33,6 @@ re: fclean all
 #	memchr\
 #	memcmp\
 #	strlen\
-#	isalpha\
 #	isdigit\
 #	isalnum\
 #	isascii\
