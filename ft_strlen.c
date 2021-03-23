@@ -6,14 +6,14 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 09:41:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/03/23 09:43:48 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/03/23 11:11:48 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-size_t	strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
