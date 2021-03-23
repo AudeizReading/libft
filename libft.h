@@ -6,12 +6,14 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 13:41:48 by alellouc          #+#    #+#             */
-/*   Updated: 2021/03/23 09:46:34 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/03/23 11:20:09 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stddef.h>
+# include <unistd.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -32,10 +34,10 @@ size_t	strlcpy(char *dst, const char *src, size_t size);
 size_t	strlcat(char *dst, const char *src, size_t size);
 char	*strnstr(const char *s1, const char *s2, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);*/
-size_t	strlen(const char *s);
-char	*strchr(const char *s, int c);
-char	*strrchr(const char *s, int c);
-int		atoi(const char *nptr);
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+int		ft_atoi(const char *nptr);
 char	*ft_join(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
