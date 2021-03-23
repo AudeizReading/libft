@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/03/23 09:23:18 by alellouc         ###   ########.fr        #
+#    Updated: 2021/03/23 09:45:58 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,12 @@ RM=-rm -rf
 CFLAGS=-Wall -Wextra -Werror
 CHEADERS=-I . 
 SRC=$(addprefix ft_, $(addsuffix .c,\
+		strlen\
 		isalpha\
 		isdigit\
 		isalnum\
 		isascii\
+		isprint\
 		toupper\
 		tolower\
 		putchar_fd\
@@ -53,8 +55,6 @@ re: fclean all
 #	memmove\
 #	memchr\
 #	memcmp\
-#	strlen\
-#	isprint\
 #	strchr\
 #	strrchr\
 #	strncmp\
