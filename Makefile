@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/03/23 11:50:38 by alellouc         ###   ########.fr        #
+#    Updated: 2021/03/23 14:19:47 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		isprint\
 		toupper\
 		tolower\
+		strncmp\
 		strdup\
 		putchar_fd\
 		putstr_fd\
@@ -58,7 +59,6 @@ re: fclean all
 #	memcmp\
 #	strchr\
 #	strrchr\
-#	strncmp\
 #	strlcpy\
 #	strlcat\
 #	strnstr\
