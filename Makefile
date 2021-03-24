@@ -36,7 +36,7 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 OBJ=$(SRC:.c=.o)
 NAME=libft.a
 
-.PHONY: clean fclean re all 
+.PHONY: clean fclean re all so cleanso
 
 all: $(NAME)
 
@@ -45,10 +45,6 @@ $(NAME): $(SRC)
 	$(AR) $@ $(OBJ)
 	$(RM) $(OBJ)
 
-# Rules for the libft-unit-tests
-so:
-	$(CC) -fPIC $(CFLAGS) $(HEADERS) -c $(SRC)
-	$(CC) -shared -o libft.so $(OBJ)
 clean:
 	$(RM) $(OBJ)
 
@@ -57,6 +53,15 @@ fclean: clean
 
 re: fclean all
 	
+# Rules for the libft-unit-tests
+so:
+	$(CC) -fPIC $(CFLAGS) $(HEADERS) -c $(SRC)
+	$(CC) -shared -o libft.so $(OBJ)
+	$(RM) $(OBJ)
+
+cleanso: clean
+	$(RM) libft.so
+
 #	bzero\
 #	memcpy\
 #	memmove\
