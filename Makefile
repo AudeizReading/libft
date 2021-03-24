@@ -53,15 +53,6 @@ fclean: clean
 
 re: fclean all
 	
-# Rules for the libft-unit-tests
-so:
-	$(CC) -fPIC $(CFLAGS) $(HEADERS) -c $(SRC)
-	$(CC) -shared -o libft.so $(OBJ)
-	$(RM) $(OBJ)
-
-cleanso: clean
-	$(RM) libft.so
-
 #	bzero\
 #	memcpy\
 #	memmove\
