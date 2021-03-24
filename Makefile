@@ -26,6 +26,7 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		toupper\
 		tolower\
 		strncmp\
+		atoi\
 		strdup\
 		putchar_fd\
 		putstr_fd\
@@ -44,6 +45,10 @@ $(NAME): $(SRC)
 	$(AR) $@ $(OBJ)
 	$(RM) $(OBJ)
 
+# Rules for the libft-unit-tests
+so:
+	$(CC) -fPIC $(CFLAGS) $(HEADERS) -c $(SRC)
+	$(CC) -shared -o libft.so $(OBJ)
 clean:
 	$(RM) $(OBJ)
 
@@ -62,7 +67,6 @@ re: fclean all
 #	strlcpy\
 #	strlcat\
 #	strnstr\
-#	atoi\
 #	calloc\
 #	substr\
 #	strjoin\
