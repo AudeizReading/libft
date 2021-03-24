@@ -16,6 +16,7 @@ RM=-rm -rf
 CFLAGS=-Wall -Wextra -Werror
 CHEADERS=-I . 
 SRC=$(addprefix ft_, $(addsuffix .c,\
+		memset\
 		strlen\
 		isalpha\
 		isdigit\
@@ -51,7 +52,6 @@ fclean: clean
 
 re: fclean all
 	
-#	memset\
 #	bzero\
 #	memcpy\
 #	memmove\
