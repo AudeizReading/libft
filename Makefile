@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/03/23 14:19:47 by alellouc         ###   ########.fr        #
+#    Updated: 2021/03/26 22:51:45 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS=-Wall -Wextra -Werror
 CHEADERS=-I . 
 SRC=$(addprefix ft_, $(addsuffix .c,\
 		memset\
+		bzero\
 		strlen\
 		isalpha\
 		isdigit\
@@ -53,7 +54,6 @@ fclean: clean
 
 re: fclean all
 	
-#	bzero\
 #	memcpy\
 #	memmove\
 #	memchr\
