@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/03/26 22:51:45 by alellouc         ###   ########.fr        #
+#    Updated: 2021/03/27 15:58:21 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ CHEADERS=-I .
 SRC=$(addprefix ft_, $(addsuffix .c,\
 		memset\
 		bzero\
+		memcpy\
 		strlen\
 		isalpha\
 		isdigit\
@@ -54,7 +55,6 @@ fclean: clean
 
 re: fclean all
 	
-#	memcpy\
 #	memmove\
 #	memchr\
 #	memcmp\
