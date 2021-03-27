@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/03/27 17:52:34 by alellouc         ###   ########.fr        #
+#    Updated: 2021/03/27 20:12:54 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		isalnum\
 		isascii\
 		isprint\
+		isspace\
 		toupper\
 		tolower\
 		strncmp\
