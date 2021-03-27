@@ -6,11 +6,19 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 13:52:23 by alellouc          #+#    #+#             */
-/*   Updated: 2021/03/23 14:00:08 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/03/27 17:52:10 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
+{
+	unsigned char	*buffer;
 
+	buffer = malloc(size * count);
+	if (buffer == NULL)
+		return (NULL);
+	ft_bzero(buffer, size);
+	return (buffer);
+}
