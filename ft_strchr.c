@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 13:57:47 by alellouc          #+#    #+#             */
-/*   Updated: 2021/03/28 14:13:15 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:21:00 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strchr(const char *s, int c)
 	c_c = (char)c;
 	while (*p_s)
 	{
-		if (*p_s == c_c)
-			return (p_s);
-		p_s++;
+		if (*p_s++ == c_c)
+			return (--p_s);
+		/*p_s++;*/
 	}
 	if (*p_s == c_c)
 		return (p_s);
