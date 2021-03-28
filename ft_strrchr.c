@@ -6,12 +6,11 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 14:29:27 by alellouc          #+#    #+#             */
-/*   Updated: 2021/03/28 15:22:50 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:52:07 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
