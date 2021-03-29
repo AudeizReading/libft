@@ -6,13 +6,14 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/03/29 09:12:39 by alellouc         ###   ########.fr        #
+#    Updated: 2021/03/29 12:29:14 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=-gcc
 AR=-ar crs
 RM=-rm -rf
+MAKE=-make
 CFLAGS=-Wall -Wextra -Werror
 CHEADERS=-I . 
 SRC=$(addprefix ft_, $(addsuffix .c,\
@@ -36,6 +37,7 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		strchr\
 		strrchr\
 		strlcpy\
+		strnstr\
 		atoi\
 		strdup\
 		calloc\
@@ -54,7 +56,7 @@ all: $(NAME)
 $(NAME): $(SRC)
 	$(CC) $(HEADERS) $(CFLAGS) -c $^
 	$(AR) $@ $(OBJ)
-	$(RM) $(OBJ)
+	$(MAKE) clean
 
 clean:
 	$(RM) $(OBJ)
@@ -65,7 +67,6 @@ fclean: clean
 re: fclean all
 	
 #	strlcat\
-#	strnstr\
 #	substr\
 #	strjoin\
 #	strtrim\
