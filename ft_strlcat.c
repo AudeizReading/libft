@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 10:45:05 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/01 08:31:20 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/01 16:51:36 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t len_dst;
-	size_t len_src;
-	size_t result;
+	size_t	len_dst;
+	size_t	len_src;
+	size_t	result;
 
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
