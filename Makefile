@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/03/31 11:03:38 by alellouc         ###   ########.fr        #
+#    Updated: 2021/04/01 15:04:07 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,12 +42,16 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		atoi\
 		strdup\
 		calloc\
+		strjoin\
 		putchar_fd\
 		putstr_fd\
 		putendl_fd\
 		putnbr_fd\
 	))
+BONUS_SRC=$(addprefix ft_, $(addsuffix .c, \
+		  ))
 OBJ=$(SRC:.c=.o)
+BONUS_OBJ=$(BONUS_SRC:.c=.o)
 NAME=libft.a
 
 .PHONY: clean fclean re all so cleanso
@@ -59,8 +63,13 @@ $(NAME): $(SRC)
 	$(AR) $@ $(OBJ)
 	$(MAKE) clean
 
+bonus: $(NAME)
+	$(CC) $(HEADERS) $(CFLAGS) -c $(BONUS_SRC)
+	$(AR) $^ $(BONUS_OBJ)
+	$(MAKE) clean
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
@@ -68,9 +77,17 @@ fclean: clean
 re: fclean all
 	
 #	substr\
-#	strjoin\
 #	strtrim\
 #	split\
 #	itoa\
 #	strmapi\
-
+#	Bonus:
+#	lstnew
+#	lstadd_front
+#	lstsize
+#	lstlast
+#	lstadd_back
+#	lstdelone
+#	lstclear
+#	lstiter
+#	lstmap
