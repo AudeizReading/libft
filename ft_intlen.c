@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 22:12:39 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/02 22:13:08 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/02 22:30:06 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 size_t	ft_intlen(int n)
 {
-	size_t	result;
-	long int c;
+	size_t		result;
+	long int	c;
 
 	c = n;
 	result = 1;
 	if (c < 0)
 		c = -c;
-	while ((c /= 10) > 0)
+	while (c / 10 > 0)
+	{
 		result++;
+		c /= 10;
+	}
 	return (result);
 }
-
