@@ -6,18 +6,11 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 22:28:41 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/02 22:18:22 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/02 22:20:57 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*static int	ft_isneg(int n)
-{
-	if ((long int)n < 0)
-		return (1);
-	return (0);
-}*/
 
 char	*ft_itoa(int n)
 {
