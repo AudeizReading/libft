@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/04/03 22:16:08 by alellouc         ###   ########.fr        #
+#    Updated: 2021/04/03 22:41:35 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ NAME=libft.a
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CC) $(HEADERS) $(CFLAGS) -c $^ -o $@
+	$(CC) $(HEADERS) $(CFLAGS) -c $^
 	$(AR) $@ $(OBJ)
 	$(MAKE) clean
 
