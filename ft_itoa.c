@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 22:28:41 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/02 22:20:57 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/03 20:29:39 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ char	*ft_itoa(int n)
 	}
 	if (c == 0)
 		itoa[len - 1] = '0';
-	while (len-- && c > 0)
+	while (c > 0)
 	{
-		itoa[len] = c % 10 + '0' ;
+		itoa[--len] = c % 10 + '0' ;
 		c /= 10;
 	}
 	return (itoa);
