@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/04/03 22:41:35 by alellouc         ###   ########.fr        #
+#    Updated: 2021/04/03 22:47:34 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		calloc\
 		strjoin\
 		itoa\
+		strmapi\
 		putchar_fd\
 		putstr_fd\
 		putendl_fd\
@@ -82,7 +83,6 @@ re: fclean all
 #	substr\
 #	strtrim\
 #	split\
-#	strmapi\
 #	Bonus:
 #	lstnew
 #	lstadd_front
