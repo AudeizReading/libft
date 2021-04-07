@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 12:04:35 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/07 12:06:07 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/07 16:34:28 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst)
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }
