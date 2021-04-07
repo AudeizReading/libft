@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 12:06:45 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/07 12:09:32 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/07 16:45:13 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	if (!*alst)
 	{
 		*alst = new;
-		return;
+		return ;
 	}
 	last = ft_lstlast(*alst);
 	last->next = new;
