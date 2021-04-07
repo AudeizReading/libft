@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 08:35:01 by alellouc          #+#    #+#             */
-/*   Updated: 2021/03/23 11:18:11 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/07 11:42:39 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!*s)
+		return ;
 	while (*s)
 		write(fd, s++, 1);
 }

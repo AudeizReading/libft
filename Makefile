@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/04/05 15:43:40 by alellouc         ###   ########.fr        #
+#    Updated: 2021/04/07 12:24:41 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,16 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		putendl_fd\
 		putnbr_fd\
 	))
-BONUS_SRC=$(addprefix ft_, $(addsuffix .c, \
+BONUS_SRC=$(addprefix ft_, $(addsuffix .c,\
+		  lstnew\
+		  lstadd_front\
+		  lstsize\
+		  lstlast\
+		  lstadd_back\
+		  lstdelone\
+		  lstclear\
+		  lstiter\
+		  lstmap\
 		  ))
 OBJ=$(SRC:.c=.o)
 BONUS_OBJ=$(BONUS_SRC:.c=.o)
@@ -71,7 +80,7 @@ $(NAME): $(SRC)
 	$(MAKE) clean
 
 bonus: $(NAME)
-	$(CC) $(HEADERS) $(CFLAGS) -c $(BONUS_SRC) -o $^
+	$(CC) $(HEADERS) $(CFLAGS) -c $(BONUS_SRC)
 	$(AR) $^ $(BONUS_OBJ)
 	$(MAKE) clean
 
@@ -85,12 +94,3 @@ re: fclean all
 	
 #	split\
 #	Bonus:
-#	lstnew
-#	lstadd_front
-#	lstsize
-#	lstlast
-#	lstadd_back
-#	lstdelone
-#	lstclear
-#	lstiter
-#	lstmap

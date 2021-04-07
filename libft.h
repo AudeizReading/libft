@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 13:41:48 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/05 15:40:45 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/07 11:58:35 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 size_t	ft_intlen(int n);
 t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **alst, t_list *new);
 int		ft_lstsize(t_list *lst);
+void	ft_lstadd_front(t_list **alst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));

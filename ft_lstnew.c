@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 08:33:59 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/07 10:21:00 by alellouc         ###   ########.fr       */
+/*   Created: 2021/04/07 09:33:50 by alellouc          #+#    #+#             */
+/*   Updated: 2021/04/07 09:45:31 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	write(fd, &c, 1);
+	t_list *lstnew;
 
+	lstnew = (t_list *)malloc(sizeof(*lstnew));
+	if (!lstnew)
+		return (NULL);
+	lstnew->content = content;
+	lstnew->next = NULL;
+	return (lstnew);
 }
