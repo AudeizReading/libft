@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/04/07 12:24:41 by alellouc         ###   ########.fr        #
+#    Updated: 2021/04/08 17:17:16 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CHEADERS=-I .
 SRC=$(addprefix ft_, $(addsuffix .c,\
 		memset\
 		bzero\
+		cntwds\
 		memcpy\
 		memccpy\
 		memchr\
@@ -47,9 +48,11 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		calloc\
 		substr\
 		strjoin\
+		strshift\
 		strtrim\
 		itoa\
 		strmapi\
+		split\
 		putchar_fd\
 		putstr_fd\
 		putendl_fd\
@@ -70,7 +73,7 @@ OBJ=$(SRC:.c=.o)
 BONUS_OBJ=$(BONUS_SRC:.c=.o)
 NAME=libft.a
 
-.PHONY: clean fclean re all
+.PHONY: clean fclean re all bonus
 
 all: $(NAME)
 
@@ -91,6 +94,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-	
-#	split\
-#	Bonus:

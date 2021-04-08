@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 13:41:48 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/07 11:58:35 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/08 17:18:06 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		ft_isneg(int n);
 int		ft_ischarset(int c, char const *charset);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_cntwds(char *str, int sep);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -52,6 +53,7 @@ char	*ft_strdup(const char *s1);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strshift(char const *s1, char const *set);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);

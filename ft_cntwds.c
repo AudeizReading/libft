@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_cntwds.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/04 17:21:01 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/08 12:08:49 by alellouc         ###   ########.fr       */
+/*   Created: 2021/04/08 17:18:21 by alellouc          #+#    #+#             */
+/*   Updated: 2021/04/08 17:26:19 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+int	ft_cntwds(char *str, int sep)
 {
-	char	*dst;
-	size_t	start;
-	size_t	len_dst;
+	enum	e_state
+	{
+		OUTSIDE_WD,
+		INSIDE_WD
+	};
+	int		nb;
+	int		state;
+	char	c_sep;
 
-	start = 0;
-	len_dst = ft_strlen(s1);
-	while (ft_ischarset(s1[start], set))
-		start++;
-	while (ft_ischarset(s1[--len_dst], set))
-		;
-	len_dst -= start;
-	dst = ft_substr(s1, start, ++len_dst);
-	if (!dst)
-		return (NULL);
-	return (dst);
+	nb = 0;
+	c_sep = (char)sep;
+	state = OUTSIDE_WD;
+	while (*str)
+	{
+		if (ft_ischarset(*str, &c_sep))
+			state = OUTSIDE_WD;
+		else if (state == OUTSIDE_WD)
+		{
+			state = INSIDE_WD;
+			nb++;
+		}
+		str++;
+	}
+	return (nb);
 }
