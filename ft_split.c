@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/09 13:11:16 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/09 16:32:42 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**ft_split(char const *s, char c)
 	if (!tab)
 		return (NULL);
 	if (nb_wds > 1)
- &&	{
+ 	{
 	while (ft_ischarset(*s, (char const *)&c))
 		s++;
 	}
