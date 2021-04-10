@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/09 22:35:21 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/10 19:53:55 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
+	/*if (s == NULL)
+		return (NULL);*/
 	if (!c)
 		nb_wds = 1;
 	if (!s)
-		nb_wds = 0;
+		return (NULL);
+		/*nb_wds = 0;*/
 	else
 		nb_wds = ft_cntwds((char *)s, (char)c);
 	tab = (char **)ft_calloc(nb_wds + 1, sizeof(*tab));
