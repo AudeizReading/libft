@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 13:41:48 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/08 17:18:06 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/11 14:06:59 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int		ft_isprint(int c);
 int		ft_isspace(int c);
 int		ft_isneg(int n);
 int		ft_ischarset(int c, char const *charset);
+void	ft_nextstr(char const **s, char const *c, int nb);
+void	ft_nextcharset(char const **s, char const *c, int nb);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_cntwds(char *str, int sep);

@@ -6,11 +6,24 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/10 19:53:55 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/11 14:10:31 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*ft_strtotab(char **tab, int i, char const *s, char c)
+{
+	tab[i] = ft_strshift(s, (char const *)&c);
+	if (!tab[i])
+	{
+		while (i >= 0)
+			free(tab[i--]);
+		free(tab);
+		return (NULL);
+	}
+	return (*(tab + i));
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -19,38 +32,20 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
-	/*if (s == NULL)
-		return (NULL);*/
-	if (!c)
-		nb_wds = 1;
 	if (!s)
 		return (NULL);
-		/*nb_wds = 0;*/
-	else
-		nb_wds = ft_cntwds((char *)s, (char)c);
+	nb_wds = ft_cntwds((char *)s, (char)c);
 	tab = (char **)ft_calloc(nb_wds + 1, sizeof(*tab));
 	if (!tab)
 		return (NULL);
-	if (nb_wds > 1)
-		while (ft_ischarset(*s, (char const *)&c))
-			s++;
+	ft_nextstr(&s, (char const *)&c, nb_wds);
 	while (i < nb_wds)
 	{
-		tab[i] = ft_strshift(s, (char const *)&c);
-		if (!tab[i])
-		{
-			while (i >= 0)
-				free(tab[i--]);
-			free(tab);
+		tab[i] = ft_strtotab(tab, i, s, c);
+		if (tab[i] == NULL)
 			return (NULL);
-		}
-		if (nb_wds > 1)
-		{
-			while (!ft_ischarset(*s, (char const *)&c))
-				s++;
-			while (ft_ischarset(*s, (char const *)&c))
-				s++;
-		}
+		ft_nextcharset(&s, (char const *)&c, nb_wds);
+		ft_nextstr(&s, (char const *)&c, nb_wds);
 		i++;
 	}
 	tab[i] = NULL;
