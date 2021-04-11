@@ -6,16 +6,17 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/04/11 13:26:00 by alellouc         ###   ########.fr        #
+#    Updated: 2021/04/11 20:36:07 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+ECHO=-echo
 CC=-gcc
 AR=-ar crs
 RM=-rm -rf
 MAKE=-make
 CFLAGS=-Wall -Wextra -Werror
-CHEADERS=-I . 
+CHEADERS=-I .
 SRC=$(addprefix ft_, $(addsuffix .c,\
 		memset\
 		bzero\
@@ -80,19 +81,34 @@ NAME=libft.a
 all: $(NAME)
 
 $(NAME): $(SRC)
+	@${ECHO} "\033[1;32m"
 	$(CC) $(HEADERS) $(CFLAGS) -c $^
+	@${ECHO} "\033[1;36m"
 	$(AR) $@ $(OBJ)
+	@${ECHO} "\033[0m"
 	$(MAKE) clean
 
 bonus: $(NAME)
+	@${ECHO} "\033[1;32m"
 	$(CC) $(HEADERS) $(CFLAGS) -c $(BONUS_SRC)
+	@${ECHO} "\033[1;36m"
 	$(AR) $^ $(BONUS_OBJ)
-	$(MAKE) clean
+	@${ECHO} "\033[0m"
+	$(MAKE) cleanbonus
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	@${ECHO} "\033[1;31m"
+	$(RM) $(OBJ)
+	@${ECHO} "\033[0m"
 
-fclean: clean
+cleanbonus: 
+	@${ECHO} "\033[1;31m"
+	$(RM) $(BONUS_OBJ)
+	@${ECHO} "\033[0m"
+
+fclean: clean cleanbonus
+	@${ECHO} "\033[1;31m"
 	$(RM) $(NAME)
+	@${ECHO} "\033[0m"
 
 re: fclean all
