@@ -6,11 +6,15 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/04/11 20:36:07 by alellouc         ###   ########.fr        #
+#    Updated: 2021/04/11 21:05:17 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ECHO=-echo
+B_GREEN=\033[1;32m
+B_RED=\033[1;31m
+B_CYAN=\033[1;36m
+FANCY_RESET=\033[0m
 CC=-gcc
 AR=-ar crs
 RM=-rm -rf
@@ -81,34 +85,34 @@ NAME=libft.a
 all: $(NAME)
 
 $(NAME): $(SRC)
-	@${ECHO} "\033[1;32m"
+	@${ECHO} "${B_GREEN}"
 	$(CC) $(HEADERS) $(CFLAGS) -c $^
-	@${ECHO} "\033[1;36m"
+	@${ECHO} "${B_CYAN}"
 	$(AR) $@ $(OBJ)
-	@${ECHO} "\033[0m"
+	@${ECHO} "${FANCY_RESET}"
 	$(MAKE) clean
 
 bonus: $(NAME)
-	@${ECHO} "\033[1;32m"
+	@${ECHO} "${B_GREEN}"
 	$(CC) $(HEADERS) $(CFLAGS) -c $(BONUS_SRC)
-	@${ECHO} "\033[1;36m"
+	@${ECHO} "${B_CYAN}"
 	$(AR) $^ $(BONUS_OBJ)
-	@${ECHO} "\033[0m"
+	@${ECHO} "${FANCY_RESET}"
 	$(MAKE) cleanbonus
 
 clean:
-	@${ECHO} "\033[1;31m"
+	@${ECHO} "${B_RED}"
 	$(RM) $(OBJ)
-	@${ECHO} "\033[0m"
+	@${ECHO} "${FANCY_RESET}"
 
 cleanbonus: 
-	@${ECHO} "\033[1;31m"
+	@${ECHO} "${B_RED}"
 	$(RM) $(BONUS_OBJ)
-	@${ECHO} "\033[0m"
+	@${ECHO} "${FANCY_RESET}"
 
 fclean: clean cleanbonus
-	@${ECHO} "\033[1;31m"
+	@${ECHO} "${B_RED}"
 	$(RM) $(NAME)
-	@${ECHO} "\033[0m"
+	@${ECHO} "${FANCY_RESET}"
 
 re: fclean all
