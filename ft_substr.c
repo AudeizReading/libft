@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 23:07:31 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/11 16:35:45 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/12 16:08:35 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	len_s;
 
 	if (!s)
-		return (ft_strdup(""));
+		/*return (ft_strdup(""));*/
+		return (NULL);
 	len_s = ft_strlen(s);
 	if (len > len_s || (len + start > len_s && start < len_s))
 		len = len_s - start;
