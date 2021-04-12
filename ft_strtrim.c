@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 17:21:01 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/11 16:39:59 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/12 12:33:51 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1)
 		return (NULL);
+	if (!set)
+		return ((char *)s1);
+	/*blabla to push*/
 	start = 0;
 	len_dst = ft_strlen(s1);
 	while (ft_ischarset(s1[start], set))
