@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 15:52:25 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/15 12:03:46 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/15 12:12:48 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	p_dst = dst;
 	p_src = src;
 	/*if (!p_dst && !p_src)*/
-	if (!p_dst || !p_src)
+	if (!p_src || !p_dst)
 		return ((void *)0);
 	while (n--)
 		*p_dst++ = *p_src++;
