@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/11 14:10:31 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/19 10:16:27 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ char	**ft_split(char const *s, char c)
 	}
 	tab[i] = NULL;
 	return (tab);
+	/* Add comment for pushing good vcersion of split */
 }
