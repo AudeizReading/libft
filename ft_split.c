@@ -6,13 +6,13 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/23 10:21:54 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/23 13:13:47 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_wdscnt(char const *s, char c)
+/*static int	ft_wdscnt(char const *s, char c)
 {
 	int		i;
 	int		nb;
@@ -21,17 +21,9 @@ static int	ft_wdscnt(char const *s, char c)
 	nb = 0;
 	while (s[i])
 	{
-		/*if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
 			nb++;
-		i++;*/
-		if (s[i] && s[i] != c)
-		{
-			while (s[i] && s[i] != c)
-				i++;
-			nb++;
-		}
-		while (s[i] && s[i] == c)
-			i++;
+		i++;
 	}
 	return (nb);
 }
@@ -84,7 +76,6 @@ char	**ft_split(char const *s, char c)
 	offset_s = 0;
 	nb = ft_wdscnt(s, c);
 	dst = (char **)ft_calloc(sizeof(*dst), (nb + 1));
-	/*dst = (char **)malloc(sizeof(*dst) * (nb + 1));*/
 	if (!dst)
 		return (NULL);
 	while (i < nb)
@@ -92,12 +83,10 @@ char	**ft_split(char const *s, char c)
 		dst[i] = (char *)ft_calloc(sizeof(**dst), (ft_wdlen(&offset_i, &offset_s, s, c) + 1));
 		if (ft_isfree(dst, i))
 			return (NULL);
-		/*ft_memcpy(dst[i++], s + offset_i, offset_s - offset_i + 1);*/
 		ft_memmove(dst[i++], s + offset_i, offset_s - offset_i + 1);
 	}
-	/*dst[i] = NULL;*/
 	return (dst);
-}
+}*/
 /*static int    is_delimiter(char c, char sep)
 {
     if (c == sep)
@@ -186,4 +175,82 @@ char    **ft_split(char const *s, char c)
     }
     str[i] = 0;
     return (str);
+}*/
+
+static char *ft_strtotab(char **tab, int i, char const *s, char c)
+{
+    tab[i] = ft_strshift(s, (char const *)&c);
+    if (!tab[i])
+    {
+        while (--i >= 0)
+            free(tab[i]);
+        free(tab);
+        return (NULL);
+    }
+    return (*(tab + i));
+}
+
+char    **ft_split(char const *s, char c)
+{
+    char    **tab;
+    int     nb_wds;
+    int     i;
+
+    i = 0;
+    if (!s)
+        return (NULL);
+    nb_wds = ft_cntwds((char *)s, (char)c);
+    tab = (char **)ft_calloc(nb_wds + 1, sizeof(*tab));
+    if (!tab)
+        return (NULL);
+    ft_nextstr(&s, (char const *)&c, nb_wds);
+    while (i < nb_wds)
+    {
+        tab[i] = ft_strtotab(tab, i, s, c);
+        if (tab[i] == NULL)
+            return (NULL);
+        ft_nextcharset(&s, (char const *)&c, nb_wds);
+        ft_nextstr(&s, (char const *)&c, nb_wds);
+        i++;
+    }
+    tab[i] = NULL;
+    return (tab);
+}
+
+/*int		main(void)
+{
+	char	**tab;
+	char	*str = "U_N_D_E_U_X_T_R_O_I_S_";
+	char	sep = '_';
+	int		nb_wds = ft_wdscnt(str, sep);
+	int		i = 0;
+
+	tab = ft_split(str, sep);
+	while (i < nb_wds)
+		ft_putendl_fd(tab[i++], 1);
+	if (tab[i] == NULL)
+		ft_putendl_fd("tab[i] = NULL", 1);
+	while (--i >= 0)
+		free(tab[i]);
+	free(tab);
+	return (0);
+}*/
+/*#include <stdio.h>
+void  test(void)
+{
+	char	*s = "U_N_D_E_U_X_T_R_O_I_S";
+	char	c = '_';
+	int		nb_w = 0;
+	char	**split = ft_split(s, c);
+	while (split[nb_w])
+	{
+		printf("%s\n", split[nb_w]);
+		free(split[nb_w++]);
+	}
+	free(split);
+}
+int main(void)
+{
+	test();
+	return (0);
 }*/
