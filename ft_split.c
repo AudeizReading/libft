@@ -6,13 +6,13 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/23 22:59:42 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/23 23:33:05 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_wdscnt(char const *s, char c)
+/*static int	ft_wdscnt(char const *s, char c)
 {
 	int		i;
 	int		nb;
@@ -26,7 +26,7 @@ static int	ft_wdscnt(char const *s, char c)
 		i++;
 	}
 	return (nb);
-}
+}*/
 
 /*static int	ft_wdlen(int *offset_i, int *offset_s, char const *s, char c)
 {
@@ -87,12 +87,12 @@ static int	ft_isfree(char **tab, int index)
 	}
 	return (dst);
 }*/
-static int    is_delimiter(char c, char sep)
+/*static int    is_delimiter(char c, char sep)
 {
     if (c == sep)
         return (1);
     return (0);
-}
+}*/
 
 /*static void    libere(char **str, int i)
 {
@@ -149,24 +149,22 @@ static int    words_count(char const *s, char sep, int *x, int *y)
     return (st);
 }*/
 
-static char    *ft_strdup_custom(char const *s, char c, int *j)
+/*static char    *ft_strdup_custom(char const *s, char c, int *j)*/
+static char    *ft_slice(char const *s, char c, int *j)
 {
     int        i;
-    int        k;
-    char    *st;
+    char    *dst;
 
     i = 0;
-    k = 0;
-    while (!is_delimiter(s[i], c) && s[i])
+    while (s[i] && s[i] != c)
         i++;
-    st = ft_substr(s, 0, i/* + 1*/);
-    if (!st)
+    dst = ft_substr(s, 0, i);
+    if (!dst)
         return (NULL);
-   /* st[i] = 0;*/
-    while (is_delimiter(s[i], c) && s[i])
+    while (s[i] && s[i] == c)
         i++;
     *j += i;
-    return (st);
+    return (dst);
 }
 
 
@@ -209,15 +207,16 @@ char    **ft_split(char const *s, char c)
         return (0);
     i = -1;
     j = 0;
-    nb = ft_wdscnt(s, c);
+    nb = ft_cntwds((char *)s, (char)c);
+    /*nb = ft_wdscnt(s, c);*/
     dst = (char **)ft_calloc(nb + 1, sizeof(char *));
     if (!dst)
         return (NULL);
-    while (is_delimiter(s[j], c) && s[j])
+    while (s[j] && s[j] == c)
         j++;
     while (++i < nb)
     {
-        dst[i] = ft_strdup_custom(&s[j], c, &j);
+        dst[i] = ft_slice((s + j), c, &j);
         if (ft_isfree(dst, i))
             return (NULL);
     }
