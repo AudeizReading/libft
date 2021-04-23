@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/23 13:41:08 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/23 14:23:16 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,8 +179,8 @@ static char    *ft_strdup_custom(char const *s, char c, int *j)
 
 char    **ft_split(char const *s, char c)
 {
-    char    **str;
-    int        count;
+    char    **dst;
+    int        nb;
     int        i;
     int        j;
 
@@ -188,19 +188,19 @@ char    **ft_split(char const *s, char c)
         return (0);
     i = -1;
     j = 0;
-    count = ft_wdscnt(s, c);
-    str = (char **)ft_calloc(count + 1, sizeof(char *));
-    if (!str)
+    nb = ft_wdscnt(s, c);
+    dst = (char **)ft_calloc(nb + 1, sizeof(char *));
+    if (!dst)
         return (NULL);
     while (is_delimiter(s[j], c) && s[j])
         j++;
-    while (++i < count && s[j])
+    while (++i < nb && s[j])
     {
-        str[i] = ft_strdup_custom(&s[j], c, &j);
-        if (ft_isfree(str, i))
+        dst[i] = ft_strdup_custom(&s[j], c, &j);
+        if (ft_isfree(dst, i))
             return (NULL);
     }
-    return (str);
+    return (dst);
 }
 
 /*static char *ft_strtotab(char **tab, int i, char const *s, char c)
@@ -261,7 +261,7 @@ char    **ft_split(char const *s, char c)
 	free(tab);
 	return (0);
 }*/
-#include <stdio.h>
+/*#include <stdio.h>
 void  test(void)
 {
 	char	*s = "U_N_D_E_U_X_T_R_O_I_S";
@@ -279,4 +279,4 @@ int main(void)
 {
 	test();
 	return (0);
-}/**/
+}*/
