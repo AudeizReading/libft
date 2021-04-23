@@ -6,13 +6,13 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/23 22:22:07 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/23 22:59:42 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*static int	ft_wdscnt(char const *s, char c)
+static int	ft_wdscnt(char const *s, char c)
 {
 	int		i;
 	int		nb;
@@ -26,7 +26,7 @@
 		i++;
 	}
 	return (nb);
-}*/
+}
 
 /*static int	ft_wdlen(int *offset_i, int *offset_s, char const *s, char c)
 {
@@ -49,7 +49,7 @@
 	return (*offset_s - *offset_i + 1);
 }*/
 
-/*static int	ft_isfree(char **tab, int index)
+static int	ft_isfree(char **tab, int index)
 {
 	if (!tab[index])
 	{
@@ -59,7 +59,7 @@
 		return (1);
 	}
 	return (0);
-}*/
+}
 
 /*char	**ft_split(char const *s, char c)
 {
@@ -87,12 +87,12 @@
 	}
 	return (dst);
 }*/
-/*static int    is_delimiter(char c, char sep)
+static int    is_delimiter(char c, char sep)
 {
     if (c == sep)
         return (1);
     return (0);
-}*/
+}
 
 /*static void    libere(char **str, int i)
 {
@@ -149,7 +149,7 @@ static int    words_count(char const *s, char sep, int *x, int *y)
     return (st);
 }*/
 
-/*static char    *ft_strdup_custom(char const *s, char c, int *j)
+static char    *ft_strdup_custom(char const *s, char c, int *j)
 {
     int        i;
     int        k;
@@ -158,18 +158,16 @@ static int    words_count(char const *s, char sep, int *x, int *y)
     i = 0;
     k = 0;
     while (!is_delimiter(s[i], c) && s[i])
-        i++;*/
-  /*  st = (char *)ft_calloc(i + 1, sizeof(char));
+        i++;
+    st = ft_substr(s, 0, i/* + 1*/);
     if (!st)
         return (NULL);
-    ft_memmove(st, s, i);*/
-/*    st = ft_substr(s, 0, i + 1);
-    st[i] = 0;
+   /* st[i] = 0;*/
     while (is_delimiter(s[i], c) && s[i])
         i++;
     *j += i;
     return (st);
-}*/
+}
 
 
 /*char    **ft_split(char const *s, char c)
@@ -200,7 +198,7 @@ static int    words_count(char const *s, char sep, int *x, int *y)
     return (str);
 }*/
 
-/*char    **ft_split(char const *s, char c)
+char    **ft_split(char const *s, char c)
 {
     char    **dst;
     int        nb;
@@ -224,9 +222,9 @@ static int    words_count(char const *s, char sep, int *x, int *y)
             return (NULL);
     }
     return (dst);
-}*/
+}
 
-static char *ft_strtotab(char **tab, int i, char const *s, char c)
+/*static char *ft_strtotab(char **tab, int i, char const *s, char c)
 {
     tab[i] = ft_strshift(s, (char const *)&c);
     if (!tab[i])
@@ -264,7 +262,7 @@ char    **ft_split(char const *s, char c)
     }
     tab[i] = NULL;
     return (tab);
-}
+}*/
 
 /*int		main(void)
 {
@@ -284,7 +282,7 @@ char    **ft_split(char const *s, char c)
 	free(tab);
 	return (0);
 }*/
-#include <stdio.h>
+/*#include <stdio.h>
 void  test(void)
 {
 	char	*s = "U_N_D_E_U_X_T_R_O_I_S";
@@ -302,4 +300,4 @@ int main(void)
 {
 	test();
 	return (0);
-}
+}*/
