@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/23 09:46:55 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/23 10:21:54 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,17 @@ static int	ft_wdscnt(char const *s, char c)
 	nb = 0;
 	while (s[i])
 	{
-		if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
+		/*if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
 			nb++;
-		i++;
+		i++;*/
+		if (s[i] && s[i] != c)
+		{
+			while (s[i] && s[i] != c)
+				i++;
+			nb++;
+		}
+		while (s[i] && s[i] == c)
+			i++;
 	}
 	return (nb);
 }
@@ -38,9 +46,9 @@ static int	ft_wdlen(int *offset_i, int *offset_s, char const *s, char c)
 		i++;
 	while (s[i] && s[i] != c)
 	{
-		if (/*s[i] != c && */(s[i - 1] == c || i - 1 < 0))
+		if (s[i - 1] == c || i - 1 < 0)
 			*offset_i = i;
-		if (/*s[i] != c && */(s[i + 1] == c || s[i + 1] == 0))
+		if (s[i + 1] == c || s[i + 1] == 0)
 			*offset_s = i;
 		i++;
 	}
@@ -75,7 +83,8 @@ char	**ft_split(char const *s, char c)
 	offset_i = 0;
 	offset_s = 0;
 	nb = ft_wdscnt(s, c);
-	dst = (char **)malloc(sizeof(*dst) * (nb + 1));
+	dst = (char **)ft_calloc(sizeof(*dst), (nb + 1));
+	/*dst = (char **)malloc(sizeof(*dst) * (nb + 1));*/
 	if (!dst)
 		return (NULL);
 	while (i < nb)
@@ -83,9 +92,10 @@ char	**ft_split(char const *s, char c)
 		dst[i] = (char *)ft_calloc(sizeof(**dst), (ft_wdlen(&offset_i, &offset_s, s, c) + 1));
 		if (ft_isfree(dst, i))
 			return (NULL);
-		ft_memcpy(dst[i++], s + offset_i, offset_s - offset_i + 1);
+		/*ft_memcpy(dst[i++], s + offset_i, offset_s - offset_i + 1);*/
+		ft_memmove(dst[i++], s + offset_i, offset_s - offset_i + 1);
 	}
-	dst[i] = NULL;
+	/*dst[i] = NULL;*/
 	return (dst);
 }
 /*static int    is_delimiter(char c, char sep)
