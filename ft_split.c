@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/23 14:23:16 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/23 15:17:09 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ static int    words_count(char const *s, char sep, int *x, int *y)
     return (count);
 }*/
 
-static char    *ft_strdup_custom(char const *s, char c, int *j)
+/*static char    *ft_strdup_custom(char const *s, char c, int *j)
 {
     int        i;
     int        k;
@@ -147,7 +147,28 @@ static char    *ft_strdup_custom(char const *s, char c, int *j)
         i++;
     *j += i;
     return (st);
+}*/
+
+static char    *ft_strdup_custom(char const *s, char c, int *j)
+{
+    int        i;
+    int        k;
+    char    *st;
+
+    i = 0;
+    k = 0;
+    while (!is_delimiter(s[i], c) && s[i])
+        i++;
+    st = (char *)ft_calloc(i + 1, sizeof(char));
+    if (!st)
+        return (NULL);
+    ft_memmove(st, s, i);
+    while (is_delimiter(s[i], c) && s[i])
+        i++;
+    *j += i;
+    return (st);
 }
+
 
 /*char    **ft_split(char const *s, char c)
 {
