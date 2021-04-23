@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/23 13:13:47 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/23 13:23:03 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char	**ft_split(char const *s, char c)
 	}
 	return (dst);
 }*/
-/*static int    is_delimiter(char c, char sep)
+static int    is_delimiter(char c, char sep)
 {
     if (c == sep)
         return (1);
@@ -175,9 +175,9 @@ char    **ft_split(char const *s, char c)
     }
     str[i] = 0;
     return (str);
-}*/
+}
 
-static char *ft_strtotab(char **tab, int i, char const *s, char c)
+/*static char *ft_strtotab(char **tab, int i, char const *s, char c)
 {
     tab[i] = ft_strshift(s, (char const *)&c);
     if (!tab[i])
@@ -215,7 +215,7 @@ char    **ft_split(char const *s, char c)
     }
     tab[i] = NULL;
     return (tab);
-}
+}*/
 
 /*int		main(void)
 {
