@@ -6,7 +6,7 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 10:39:21 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/09 13:03:43 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/23 22:27:06 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_strshift(char const *s1, char const *set)
 			len_dst++;
 	}
 	dst = ft_substr(s1, start, len_dst);
+	dst[len_dst] = 0;
 	if (!dst)
 		return (NULL);
 	return (dst);
