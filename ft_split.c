@@ -6,13 +6,13 @@
 /*   By: alellouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 16:27:54 by alellouc          #+#    #+#             */
-/*   Updated: 2021/04/22 15:20:14 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/04/23 09:46:55 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*static int	ft_wdscnt(char const *s, char c)
+static int	ft_wdscnt(char const *s, char c)
 {
 	int		i;
 	int		nb;
@@ -38,9 +38,9 @@ static int	ft_wdlen(int *offset_i, int *offset_s, char const *s, char c)
 		i++;
 	while (s[i] && s[i] != c)
 	{
-		if (s[i] != c && (s[i - 1] == c || i - 1 < 0))
+		if (/*s[i] != c && */(s[i - 1] == c || i - 1 < 0))
 			*offset_i = i;
-		if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
+		if (/*s[i] != c && */(s[i + 1] == c || s[i + 1] == 0))
 			*offset_s = i;
 		i++;
 	}
@@ -53,8 +53,8 @@ static int	ft_isfree(char **tab, int index)
 {
 	if (!tab[index])
 	{
-		while (index >= 0)
-			free(tab[index--]);
+		while (--index >= 0)
+			free(tab[index]);
 		free(tab);
 		return (1);
 	}
@@ -87,8 +87,8 @@ char	**ft_split(char const *s, char c)
 	}
 	dst[i] = NULL;
 	return (dst);
-}*/
-static int    is_delimiter(char c, char sep)
+}
+/*static int    is_delimiter(char c, char sep)
 {
     if (c == sep)
         return (1);
@@ -176,4 +176,4 @@ char    **ft_split(char const *s, char c)
     }
     str[i] = 0;
     return (str);
-}
+}*/
