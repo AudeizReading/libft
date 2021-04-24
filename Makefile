@@ -6,7 +6,7 @@
 #    By: alellouc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/23 08:35:31 by alellouc          #+#    #+#              #
-#    Updated: 2021/04/13 09:32:41 by alellouc         ###   ########.fr        #
+#    Updated: 2021/04/24 16:35:41 by alellouc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,6 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		isspace\
 		isneg\
 		ischarset\
-		nextstr\
-		nextcharset\
 		toupper\
 		tolower\
 		strncmp\
@@ -55,7 +53,6 @@ SRC=$(addprefix ft_, $(addsuffix .c,\
 		calloc\
 		substr\
 		strjoin\
-		strshift\
 		strtrim\
 		itoa\
 		strmapi\
