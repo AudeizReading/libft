@@ -6,7 +6,7 @@
 /*   By: alellouc <alellouc@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 14:11:15 by alellouc          #+#    #+#             */
-/*   Updated: 2021/06/27 14:11:38 by alellouc         ###   ########.fr       */
+/*   Updated: 2021/06/27 14:23:23 by alellouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_putnbr_base(int nbr, char *base, t_bool restart)
 	l_nbr = nbr;
 	size_base = 0;
 	if (ft_check_invalid_base(base, &size_base))
-			return (-1);
+		return (-1);
 	if (l_nbr < 0)
 	{
 		ft_putchar_fd('-', 1);
